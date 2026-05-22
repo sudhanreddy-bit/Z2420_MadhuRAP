@@ -1,0 +1,50 @@
+managed implementation in class ZBP_R_BTP_DT_CUST unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_BTP_DT_CUST alias ZrBtpDtCust
+persistent table ZBTP_DT_CUST
+extensible
+draft table ZBTP_DT_CUST_D
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+{
+  field ( mandatory : create )
+   CustID;
+
+  field ( readonly )
+   LocalLastChanged,
+   LastChanged,
+   LocalChangedBy,
+   LastChangedBy;
+
+  field ( readonly : update )
+   CustID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZBTP_DT_CUST corresponding extensible
+  {
+    CustID = cust_id;
+    Name = name;
+    CompanyName = company_name;
+    Country = country;
+    City = city;
+    Mobile = mobile;
+    LocalLastChanged = local_last_changed;
+    LastChanged = last_changed;
+    LocalChangedBy = local_changed_by;
+    LastChangedBy = last_changed_by;
+  }
+
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_BTP_DT_CUST'
+@MappingRole: true
+define role ZR_BTP_DT_CUST {
+  grant select on ZR_BTP_DT_CUST
+  where TRUE;
+}

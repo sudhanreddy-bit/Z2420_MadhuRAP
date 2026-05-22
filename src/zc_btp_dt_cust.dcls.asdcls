@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_BTP_DT_CUST'
+@MappingRole: true
+define role ZC_BTP_DT_CUST {
+  grant select on ZC_BTP_DT_CUST
+  where INHERITING CONDITIONS FROM ENTITY ZR_BTP_DT_CUST REPLACING { ROOT WITH _BaseEntity };
+}

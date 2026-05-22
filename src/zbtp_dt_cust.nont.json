@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZBTP_DT_CUST",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZBTP_DT_CUST",
+  "sapObjectType": "ZBTP_DT_CUST",
+  "rootNode": true
+}
